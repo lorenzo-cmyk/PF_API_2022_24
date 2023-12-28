@@ -1,0 +1,26 @@
+{
+    "tasks": [
+        {
+            "type": "cppbuild",
+            "label": "C: Compile active file (DUM-E compliant)",
+            "command": "/usr/bin/gcc",
+            "args": [
+                "-DEVAL -Wall -Werror -std=gnu11 -O2 -pipe -static -s -lm",
+                "-fdiagnostics-color=always",
+                "-g",
+                "${file}",
+                "-o",
+                "${fileDirname}/${fileBasenameNoExtension}.o"
+            ],
+            "options": {
+                "cwd": "${fileDirname}"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": "build",
+            "detail": "Compile active file like DUM-E would do."
+        }
+    ],
+    "version": "2.0.0"
+}
